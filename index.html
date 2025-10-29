@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imran Nazir - Software Engineer Portfolio</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+    <style>
+        /* --- CSS STYLES --- */
+        :root {
+            --primary-color: #00bcd4; /* Cyan/Turquoise for accents */
+            --secondary-color: #3f51b5; /* Indigo/Blue for secondary accents */
+            --background-color: #121212; /* Dark theme background */
+            --card-color: #1e1e1e; /* Slightly lighter card background */
+            --text-color: #ffffff;
+            --light-text: #bdbdbd;
+            --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        header {
+            background-color: var(--card-color);
+            color: var(--text-color);
+            padding: 1em 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        nav a {
+            color: var(--text-color);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        section {
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            text-align: center;
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+            display: inline-block;
+            width: fit-content;
+            margin-left: auto;
+            margin-right: auto;
+            display: block; /* To center the block element */
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            text-align: center;
+            padding: 100px 20px;
+            min-height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #hero h1 {
+            font-size: 3.5em;
+            margin-bottom: 0.2em;
+        }
+
+        #hero p {
+            font-size: 1.5em;
+            color: var(--light-text);
+            margin-bottom: 2em;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--background-color);
+            padding: 10px 30px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--secondary-color);
+            color: var(--text-color);
+        }
+
+        /* --- About/Education/Skills Cards --- */
+        .card-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            background-color: var(--card-color);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            flex: 1 1 300px; /* Allows cards to wrap and grow */
+            transition: transform 0.3s;
+            border-left: 5px solid var(--primary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+
+        /* --- Skills Section specific --- */
+        #skills ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        #skills ul li {
+            background-color: var(--secondary-color);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: var(--text-color);
+            transition: background-color 0.3s;
+        }
+
+        #skills ul li:hover {
+            background-color: var(--primary-color);
+        }
+
+        /* --- Contact/Footer --- */
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: var(--card-color);
+            color: var(--light-text);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* --- Responsive Design --- */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                padding-top: 10px;
+            }
+
+            nav a {
+                margin: 5px 10px;
+            }
+
+            #hero h1 {
+                font-size: 2.5em;
+            }
+
+            #hero p {
+                font-size: 1.2em;
+            }
+            
+            h2 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">I.N. Portfolio</div>
+            <div>
+                <a href="#about">About</a>
+                <a href="#education">Education</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section id="hero">
+        <h1>Hello, I'm **Imran Nazir** 👋</h1>
+        <p>A passionate **Software Engineering Student** with a deep interest in coding.</p>
+        <a href="#contact" class="cta-button">Get In Touch</a>
+    </section>
+
+    <section id="about">
+        <h2>About Me 👨‍🎓</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>My Journey</h3>
+                <p>I am currently pursuing a **Software Engineering** degree at the **University of Rasul**. My academic focus is on learning robust development principles and problem-solving techniques.</p>
+            </div>
+            <div class="card">
+                <h3>My Passion</h3>
+                <p>I have a **deep interest in coding** and enjoy exploring new technologies. I thrive on turning complex problems into clean, efficient code. My goal is to contribute to innovative software solutions.</p>
+            </div>
+            <div class="card">
+                <h3>The Goal</h3>
+                <p>I'm actively looking for opportunities to apply my knowledge in real-world projects, collaborate with experienced developers, and grow my skills in areas like **Web Development** and **Data Structures**.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <h2>Education 📚</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>University of Rasul</h3>
+                <p><strong>Student of Software Engineering</strong></p>
+                <p>Focusing on core computer science concepts, object-oriented programming, database management, and system design.</p>
+            </div>
+            <div class="card">
+                <h3>Punjab College Malakwal</h3>
+                <p><strong>Intermediate (F.Sc. Pre-Engineering)</strong></p>
+                <p>Completed my inter-level education, which provided a strong foundation in science and mathematics, essential for engineering studies.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills 💻</h2>
+        <p style="text-align: center; margin-bottom: 20px;">I'm actively learning and proficient in the following technologies:</p>
+        <ul>
+            <li>**Core Languages:** Python, C++, Java</li>
+            <li>**Web Development:** HTML5, CSS3, JavaScript, Bootstrap</li>
+            <li>**Database:** SQL (MySQL/PostgreSQL)</li>
+            <li>**Tools & Systems:** Git/GitHub, Linux Basics, VS Code</li>
+            <li>**Concepts:** OOP, Data Structures & Algorithms</li>
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2>Featured Projects 💡</h2>
+        <div class="card-container">
+            <div class="card">
+                <h3>Project Title 1 (e.g., Simple Calculator Web App)</h3>
+                <p>A brief description of the project, the technologies used (e.g., HTML, CSS, JS), and your key contribution or what you learned.</p>
+                <p style="margin-top: 15px; color: var(--primary-color);">**Status:** Ongoing/Completed</p>
+            </div>
+            <div class="card">
+                <h3>Project Title 2 (e.g., University Database Management)</h3>
+                <p>A description of a backend/database-focused project. Highlight the problem solved and the system design approach you took.</p>
+                <p style="margin-top: 15px; color: var(--primary-color);">**Status:** Planing Phase</p>
+            </div>
+        </div>
+        <p style="text-align: center; margin-top: 40px; color: var(--light-text);">More projects are available on my GitHub!</p>
+    </section>
+
+    <section id="contact">
+        <h2>Connect With Me 📧</h2>
+        <p>I'm always open to discussing new projects, collaboration opportunities, or technical challenges.</p>
+        <p>
+            <a href="mailto:your.email@example.com" class="cta-button" style="margin-right: 15px;">Email Me</a>
+            <a href="https://linkedin.com/in/yourprofile" class="cta-button" style="background-color: #0077B5;">LinkedIn</a>
+        </p>
+        <p style="margin-top: 20px; color: var(--light-text);">*Remember to replace 'your.email@example.com' and 'yourprofile' with your actual links.</p>
+    </section>
+
+    <footer>
+        &copy; <span id="current-year"></span> Imran Nazir. Designed and Coded with Passion.
+    </footer>
+
+    <script>
+        // Simple script to automatically update the copyright year in the footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Optional: A small effect when a section is reached (simple way)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, {
+            threshold: 0.1 // Triggers when 10% of the element is visible
+        });
+
+        // Add a class for all sections to trigger the effect
+        document.querySelectorAll('section').forEach(section => {
+            section.style.opacity = 0; // Start invisible
+            section.style.transition = 'opacity 0.6s ease-out';
+            observer.observe(section);
+        });
+
+        // The 'visible' class will make it appear
+        document.head.insertAdjacentHTML('beforeend', '<style>.visible { opacity: 1 !important; }</style>');
+    </script>
+</body>
+</html>
